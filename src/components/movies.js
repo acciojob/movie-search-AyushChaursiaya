@@ -37,7 +37,7 @@ function Movies() {
                         <img src={movie.Poster} alt={`${movie.Title} Poster`} />
                     </li>
                 ))) : (
-                    <p>{error}</p>
+                    <p className="error">{error}</p>
                 )}
             </ul>
         </>
