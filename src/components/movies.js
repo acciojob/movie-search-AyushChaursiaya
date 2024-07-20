@@ -17,18 +17,19 @@ function Movies() {
 
     return (
         <>
-            <div>
+            <form onClick={handleSubmit}>
                 <input type='text' value={input} onChange={(e) => setInput(e.target.value)} />
-                <button onClick={handleSubmit}>Search</button>
-            </div>
+                <button type='submit'>Search</button>
+            </form>
             <ul>
-                {movies && movies.length > 0 ? (movies.map((movie) => (
+                {movies && movies.length > 0 ? 
+                (movies.map((movie) => (
                     <li key={movie.imdbID}>
                         <h1>{movie.Title}</h1>
                         <img src={movie.Poster} alt={`${movie.Title} Poster`} />
                     </li>
                 )
-            )) : (<p>Invalid movie name. Please try again.</p>)}
+            )) : (<p>Invalid movie name. Please try again.{movie.error}</p>)}
             </ul>
         </>
     )
