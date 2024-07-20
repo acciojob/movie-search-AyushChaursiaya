@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 function Movies() {
     const [input, setInput] = useState('');
@@ -28,7 +28,7 @@ function Movies() {
                         <img src={movie.Poster} alt={`${movie.Title} Poster`} />
                     </li>
                 )
-            )) : (<p>No movie found</p>)}
+            )) : (<p>Invalid movie name. Please try again.</p>)}
             </ul>
         </>
     )
